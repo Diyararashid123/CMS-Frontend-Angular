@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+:root{
+
+  --text: #dee2fc;
+  --background: linear-gradient(180deg, rgba(2,0,36,1) 58%, rgba(35,7,93,1) 100%);
+  --primary: #a4b1f9;
+  --secondary: #9d7dd4;
+  --accent: #281a37;
+}
+
+//for light moode
+//:root{
+// --text: #030721;
+ // background: linear-gradient(180deg, rgba(215,213,255,1) 58%, rgba(99,72,156,1) 100%);
+// --primary: #06135b;
+// --secondary: #4b2b82;
+// --accent: #d6c8e5;
+//}

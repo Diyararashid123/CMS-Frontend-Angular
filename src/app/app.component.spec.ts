@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'CMS-project-Angular' title`, () => {
+  it(`should have the 'AngularUi' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('CMS-project-Angular');
+    expect(app.title).toEqual('AngularUi');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, CMS-project-Angular');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, AngularUi');
   });
 });
