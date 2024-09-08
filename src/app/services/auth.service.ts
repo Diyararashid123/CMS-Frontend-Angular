@@ -16,11 +16,16 @@ export class AuthService {
     return this.http.get<any>(`${this.baseUrl}validate-session`,{withCredentials:true})
   }
 
+
   signUp(userObj:any){
     return this.http.post<any>(`${this.baseUrl}register`,userObj)
   }
 
   login(loginObj: any) {
     return this.http.post<any>(`${this.baseUrl}login`, loginObj, { withCredentials: true });
+  }
+
+  logout(){
+    return this.http.get<any>(`${this.baseUrl}logout`,{withCredentials:true});
   }
 }

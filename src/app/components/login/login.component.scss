@@ -1,6 +1,6 @@
 .outer {
-  height: 100vh;
-  background:var(--background);
+  height: 100vh; /* Ensures full view height, consider reducing padding or content inside instead */
+  background: var(--background);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,41 +8,46 @@
 
 .panel-heading {
   text-align: center;
-  margin-bottom: 20px; 
+  margin-bottom: 30px;
   color: #fff;
+  font-size: larger;
 }
 
-#forget, #signup {
+#forget,
+#signup {
   text-decoration: none;
   cursor: pointer;
-  color: #00bfff; 
+  color: #00bfff;
+  font-size: larger;
 }
 
-#forget:hover, #signup:hover {
+#forget:hover,
+#signup:hover {
   text-decoration: underline;
 }
 
 .form-group {
-  margin-bottom: 15px; 
+  margin-bottom: 20px;
 }
 
 .input-field {
-  border-radius: 5px;
-  padding: 10px; 
+  border-radius: 8px;
+  padding: 15px;
   display: flex;
   align-items: center;
   cursor: pointer;
-  border: 1px solid #ddd;
+  border: 2px solid #ddd;
   background: rgba(255, 255, 255, 0.3);
-  margin-bottom: 15px; 
+  margin-bottom: 20px;
 }
 
 .input-field span {
   color: #fff;
-  margin-right: 10px; 
+  margin-right: 12px;
 }
+
 .input-field.error {
-  border: 1px solid red;
+  border: 2px solid red;
 }
 
 .input-field.error .icon {
@@ -51,37 +56,41 @@
 
 .text-danger {
   color: red;
+  font-size: larger;
 }
 
-
-input[type='text'], input[type='password'] {
+input[type="text"],
+input[type="password"] {
   border: none;
   outline: none;
   box-shadow: none;
   width: 100%;
   background: transparent;
-  color: #fff;
+  color: #fff !important;
+  font-size: larger;
 }
 
 .btn {
-  border-radius: 15px;
-  background-color: #6a0dad; 
+  border-radius: 20px;
+  background-color: #6a0dad;
   border: none;
-  color: #fff; 
-  padding: 10px; 
+  color: #fff;
+  padding: 15px;
   width: 100%;
+  font-size: larger;
 }
 
-.btn:hover, .btn:default {
-  background-color: #6a0dad; 
+.btn:hover,
+.btn:default {
+  background-color: #6a0dad;
 }
 
 .panel {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #17023b;
+  border: 2px solid rgba(64, 45, 68, 0.342);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  padding: 20px;
+  border-radius: 15px;
+  padding: 60px; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,23 +99,24 @@ input[type='text'], input[type='password'] {
 }
 
 .text-muted {
-  color: #fff; 
+  color: #fff;
+  font-size: larger;
 }
 
 .text-muted a {
-  color: #6a0dad; 
+  color: #6a0dad;
 }
 
 .text-muted a:hover {
-  color: #6a0dad; 
+  color: #6a0dad;
 }
 
 a {
-  color: #6a0dad; 
+  color: #6a0dad;
 }
 
 a:hover {
-  color: #6a0dad; 
+  color: #6a0dad;
 }
 
 .toggle-password {

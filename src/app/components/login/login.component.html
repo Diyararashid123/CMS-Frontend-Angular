@@ -9,34 +9,94 @@
           <div class="panel-body p-3">
             <form [formGroup]="loginForm">
               <div class="form-group">
-                <div class="input-field" 
-                     [class.error]="loginForm.controls['username'].invalid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)">
-                  <span class="fa fa-user p-2 icon" 
-                        [class.icon-error]="loginForm.controls['username'].invalid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)"></span>
-                  <input formControlName="username" type="text" placeholder="Username">
+                <div
+                  class="input-field text-white"
+                  [class.error]="
+                    loginForm.controls['username'].invalid &&
+                    (loginForm.controls['username'].dirty ||
+                      loginForm.controls['username'].touched)
+                  "
+                >
+                  <span
+                    class="fa fa-user p-2 icon"
+                    [class.icon-error]="
+                      loginForm.controls['username'].invalid &&
+                      (loginForm.controls['username'].dirty ||
+                        loginForm.controls['username'].touched)
+                    "
+                  ></span>
+                  <input
+                    formControlName="username"
+                    type="text"
+                    placeholder="Username"
+                    class="text-white"
+                  />
                 </div>
               </div>
-              <small *ngIf="loginForm.controls['username'].invalid && (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)" class="text-danger">
+              <small
+                *ngIf="
+                  loginForm.controls['username'].invalid &&
+                  (loginForm.controls['username'].dirty ||
+                    loginForm.controls['username'].touched)
+                "
+                class="text-danger"
+              >
                 *Username is required
               </small>
               <div class="form-group">
-                <div class="input-field" 
-                     [class.error]="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
-                  <span class="fa fa-lock p-2 icon" 
-                        [class.icon-error]="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)"></span>
-                  <input formControlName="password" [type]="type" placeholder="Password">
-                  <span (click)="hideShowPass()" class="fa {{eyeIcon}} icon"></span>
+                <div
+                  class="input-field text-white"
+                  [class.error]="
+                    loginForm.controls['password'].invalid &&
+                    (loginForm.controls['password'].dirty ||
+                      loginForm.controls['password'].touched)
+                  "
+                >
+                  <span
+                    class="fa fa-lock p-2 icon"
+                    [class.icon-error]="
+                      loginForm.controls['password'].invalid &&
+                      (loginForm.controls['password'].dirty ||
+                        loginForm.controls['password'].touched)
+                    "
+                  ></span>
+                  <input
+                    formControlName="password"
+                    [type]="type"
+                    placeholder="Password"
+                    class="text-white"
+                  />
+                  <span
+                    (click)="hideShowPass()"
+                    class="fa {{ eyeIcon }} icon"
+                  ></span>
                 </div>
               </div>
-              <small *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="text-danger">
+              <small
+                *ngIf="
+                  loginForm.controls['password'].invalid &&
+                  (loginForm.controls['password'].dirty ||
+                    loginForm.controls['password'].touched)
+                "
+                class="text-danger"
+              >
                 *Password is required
               </small>
               <div class="form-group text-right">
                 <a id="forget" class="font-weight-bold">Forget Password</a>
               </div>
-              <button (click)="onLogin()" type="submit" class="btn btn-primary btn-block">Login</button>
+              <button
+                (click)="onLogin()"
+                type="submit"
+                class="btn btn-primary btn-block"
+              >
+                Login
+              </button>
               <div class="text-center pt-4 text-white">
-                Don't have an account? <a id="signup" class="font-weight-bold" href="/signup">Sign Up</a>
+                Don't have an account?
+                <a id="signup" class="font-weight-bold" href="/signup"
+                  >Sign Up</a
+                >
               </div>
             </form>
           </div>

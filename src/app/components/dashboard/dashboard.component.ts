@@ -31,6 +31,16 @@ export class DashboardComponent implements OnInit {
     });
   }
   
-  
+  onLogout() {
+    this.auth.logout().subscribe({
+      next: () => {
+        console.log('Logout successful');
+        this.router.navigate(['login']);
+      },
+      error: (err) => {
+        console.error('Logout failed', err);
+      }
+    });
+  }
   
 }

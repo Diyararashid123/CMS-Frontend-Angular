@@ -34,9 +34,7 @@ export class LoginComponent implements OnInit {
 
 
   onLogin() {
-
     if (this.loginForm.valid ) {
-      //Senbd the object to database
       this.auth.login(this.loginForm.value).subscribe({
         next:(res=>{
           this.router.navigate(['dashboard'])
