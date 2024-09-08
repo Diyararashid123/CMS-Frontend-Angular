@@ -20,7 +20,7 @@ export class AuthService {
     return this.http.post<any>(`${this.baseUrl}register`,userObj)
   }
 
-  login(loginObj:any){
-    return this.http.post<any>(`${this.baseUrl}login`,loginObj,{withCredentials:true})
+  login(loginObj: any) {
+    return this.http.post<any>(`${this.baseUrl}login`, loginObj, { withCredentials: true });
   }
 }
