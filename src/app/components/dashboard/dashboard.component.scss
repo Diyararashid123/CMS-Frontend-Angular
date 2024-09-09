@@ -18,6 +18,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  font-size: 1.15rem;
 }
 
 #sidebarMenu .mt-auto {
@@ -43,30 +44,119 @@
   margin: 5px;
   border-radius: 5px;
   transition: background-color 0.3s;
+  
 }
 
-.nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-}
 .card {
   background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
   border: none;
+  
+  box-shadow: 
+    0 4px 8px rgba(74, 3, 74, 0.5), /* Existing purple glow */
+    0 0 20px rgba(16, 1, 30, 0.1), /* Existing white glow for depth */
+    inset 0 -50px 30px -20px rgba(27, 1, 60, 0.2), /* Bottom center shine */
+    inset 0 50px 30px -20px rgba(255, 255, 255, 0.2); /* Top center shine */
 }
+
+
+
 
 .card-body {
   opacity: 0.85;
 }
 
 .btn-primary {
-  background-color: #60229e;
+  background: linear-gradient(
+    to bottom right,
+    white,
+    rgb(112, 6, 145) 50%,
+    white
+  ),
+  linear-gradient(to top right, #b5a3c7 50%, #9587bf);
+background-blend-mode: multiply;
+  color: white;
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: #49348a;
+  background: linear-gradient(
+    to bottom right,
+    white,
+    rgb(112, 6, 145) 50%,
+    white
+  ),
+  linear-gradient(to top right, #60229e 50%, #9587bf),
+  linear-gradient(to top left, #8f37e705 50%, #8585cf);
+background-blend-mode: multiply;
 }
 
 .main {
   padding-left: 250px;
+}
+
+
+ul {
+  padding: 0;
+  display: flex;
+  
+}
+
+li {
+  list-style-type: none;
+  padding: 10px 20px;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #222;
+  position: relative;
+  
+}
+
+ul li a:before,
+ul li a:after {
+  content: "";
+  height: 5px;
+  position: absolute;
+  top: 120%;
+  transition: all 0.5s;
+}
+
+ul li a:before {
+  left: 0;
+  width: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgb(233, 228, 228),
+    rgb(114, 10, 146) 50%,
+    #f4f3f7
+  ),
+  linear-gradient(to top right, #a392b4 50%, #9587bf);
+background-blend-mode: multiply;
+}
+
+ul li a:after {
+  right: 0;
+  width: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgb(249, 247, 247),
+    rgb(112, 6, 145) 50%,
+    #08060e
+  ),
+  linear-gradient(to top right, #60229e 50%, #9587bf);
+background-blend-mode: multiply;
+}
+
+ul li a:hover:before {
+  width: 50%;
+  transform: translateX(100%);
+}
+
+ul li a:hover:after {
+  width: 50%;
+  transform: translateX(-100%);
 }

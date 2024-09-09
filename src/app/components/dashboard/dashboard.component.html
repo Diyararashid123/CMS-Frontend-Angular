@@ -2,29 +2,31 @@
   <div class="row">
     <nav
       id="sidebarMenu"
-      class="col-md-3 col-lg-2 d-md-block sidebar collapse border-right"
+      class="col-md-3 col-lg-2 d-md-block sidebar collapse border-right px-1"
     >
-      <div class="position-sticky pt-3">
-        <ul class="nav flex-column">
-          <li class="nav-item">
+      <div class="position-sticky pt-3 ">
+        
+        <ul class="nav flex-column d-flex justify-content-around">
+          
+          <li class="nav-item py-2 ">
             <a class="nav-link active" aria-current="page" href="#">
               <i class="fas fa-home"></i> Dashboard
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item py-2">
             <a class="nav-link" href="#">
               <i class="fas fa-file-alt"></i> Posts
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item py-2">
             <a class="nav-link" href="#"> <i class="fas fa-file"></i> Pages </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item py-2">
             <a class="nav-link" href="#">
               <i class="fas fa-camera"></i> Media
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item py-2">
             <a class="nav-link" href="#">
               <i class="fas fa-cog"></i> Settings
             </a>
@@ -32,19 +34,15 @@
         </ul>
         <div class="mt-auto">
           <ul class="nav flex-column user-logout">
-            <li class="nav-item">
-              <img
-                src="assets/pexels-francesco-ungaro-1525041.jpg"
-                alt="Profile"
-                class="profile-pic"
-              />
+            <li class="nav-item py-2">
+           
 
-              <i class="fas"></i> {{ username }}
+              <i class="fas px-4">{{ username }}</i> 
 
               <button
                 (click)="onLogout()"
                 type="submit"
-                class="btn btn-primary btn-block"
+                class="btn btn-primary btn-block width-[100%]"
               >
                 Logout
               </button>
@@ -54,7 +52,7 @@
       </div>
     </nav>
 
-    <main
+    <div
       class="col-md-9 ml-sm-auto col-lg-10 px-md-4"
       style="border-left: 1px solid white"
     >
@@ -71,7 +69,8 @@
               <p class="card-text">
                 Manage your posts and publish new content.
               </p>
-              <a href="#" class="btn btn-primary">Go to Posts</a>
+              <a href="#" class="btn btn-primary">
+                Go to Posts</a>
             </div>
           </div>
         </div>
@@ -96,6 +95,6 @@
           </div>
         </div>
       </div>
-    </main>
+    </div>
   </div>
 </div>
