@@ -53,10 +53,10 @@
   border: none;
   
   box-shadow: 
-    0 4px 8px rgba(74, 3, 74, 0.5), /* Existing purple glow */
-    0 0 20px rgba(16, 1, 30, 0.1), /* Existing white glow for depth */
-    inset 0 -50px 30px -20px rgba(27, 1, 60, 0.2), /* Bottom center shine */
-    inset 0 50px 30px -20px rgba(255, 255, 255, 0.2); /* Top center shine */
+    0 4px 8px rgba(74, 3, 74, 0.5), 
+    0 0 20px rgba(16, 1, 30, 0.1),
+    inset 0 -50px 30px -20px rgba(27, 1, 60, 0.2),
+    inset 0 50px 30px -20px rgba(255, 255, 255, 0.2); 
 }
 
 
@@ -67,14 +67,7 @@
 }
 
 .btn-primary {
-  background: linear-gradient(
-    to bottom right,
-    white,
-    rgb(112, 6, 145) 50%,
-    white
-  ),
-  linear-gradient(to top right, #b5a3c7 50%, #9587bf);
-background-blend-mode: multiply;
+  background:rgb(143, 130, 168);
   color: white;
   border: none;
 }
@@ -86,8 +79,8 @@ background-blend-mode: multiply;
     rgb(112, 6, 145) 50%,
     white
   ),
-  linear-gradient(to top right, #60229e 50%, #9587bf),
-  linear-gradient(to top left, #8f37e705 50%, #8585cf);
+  linear-gradient(to top right, #b5a3c7 50%, #9587bf);
+background-blend-mode: multiply;
 background-blend-mode: multiply;
 }
 
@@ -128,27 +121,14 @@ ul li a:after {
 ul li a:before {
   left: 0;
   width: 0;
-  background: linear-gradient(
-    to bottom right,
-    rgb(233, 228, 228),
-    rgb(114, 10, 146) 50%,
-    #f4f3f7
-  ),
-  linear-gradient(to top right, #a392b4 50%, #9587bf);
+  background: white;
 background-blend-mode: multiply;
 }
 
 ul li a:after {
   right: 0;
   width: 0;
-  background: linear-gradient(
-    to bottom right,
-    rgb(249, 247, 247),
-    rgb(112, 6, 145) 50%,
-    #08060e
-  ),
-  linear-gradient(to top right, #60229e 50%, #9587bf);
-background-blend-mode: multiply;
+  background: white;
 }
 
 ul li a:hover:before {

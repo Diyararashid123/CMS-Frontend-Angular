@@ -1,0 +1,41 @@
+body {
+  background-color: #f8f9fa;
+}
+
+.card-header {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: none;
+  
+  box-shadow: 
+    0 4px 8px rgba(74, 3, 74, 0.5), 
+    0 0 20px rgba(16, 1, 30, 0.1), 
+    inset 0 -50px 30px -20px rgba(27, 1, 60, 0.2), 
+    inset 0 50px 30px -20px rgba(255, 255, 255, 0.2); 
+}
+
+
+
+
+.card-body {
+  opacity: 0.85;
+}
+
+.input-field {
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}

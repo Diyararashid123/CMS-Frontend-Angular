@@ -42,5 +42,12 @@ export class DashboardComponent implements OnInit {
       }
     });
   }
+
+  goToCreateProject(){
+    this.router.navigate(['create-projet']);
+  }
+
+
+
   
 }

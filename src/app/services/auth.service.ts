@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError } from 'rxjs';
-
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,6 +16,20 @@ export class AuthService {
     return this.http.get<any>(`${this.baseUrl}validate-session`,{withCredentials:true})
   }
 
+  createProject(projectObj:any){
+    return this.http.post<any>(`${this.baseUrl}create-project`,projectObj,{withCredentials:true})
+  }
+  getResults(query: string) {
+    const url = `${this.baseUrl}users?q=${query}`;
+    console.log('Fetching URL:', url);
+    return this.http.get<any>(url);
+  }
+  
+
+
+  getproject() {
+    return this.http.get<{projects: {ProjectName: string, ProjectDescription: string}[]}>(`${this.baseUrl}projects`, {withCredentials: true});
+  }
 
   signUp(userObj:any){
     return this.http.post<any>(`${this.baseUrl}register`,userObj)
