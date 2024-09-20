@@ -5,10 +5,11 @@ import {
   Validators,
   ReactiveFormsModule,
   FormControl} from "@angular/forms";
-import { CommonModule } from "@angular/common";
+
 import ValidateForm from "../../helpers/validateForm";
 import { AuthService } from "../../services/auth.service";
 import { Router } from "@angular/router";
+import { CommonModule } from "@angular/common";
 
 @Component({
   selector: "app-login",

@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
+  
   standalone: true,
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
@@ -44,7 +45,7 @@ export class DashboardComponent implements OnInit {
   }
 
   goToCreateProject(){
-    this.router.navigate(['create-projet']);
+    this.router.navigate(['createproject']);
   }
 
 

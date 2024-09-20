@@ -1,0 +1,21 @@
+<div class="card mt-4">
+  <div class="card-header">
+    <h3 class="font-weight-bold">Search Users</h3>
+  </div>
+  <div class="search-input-container">
+    <input class="form-control search-trigger" placeholder="Enter search query" (click)="openModal()" readonly />
+  </div>
+</div>
+
+<div *ngIf="isModalOpen" class="search-modal" (click)="closeModal($event)">
+  <div class="search-modal-content">
+    <h5>Search Users</h5>
+    <div class="form-group">
+      <input [(ngModel)]="searchQuery" type="text" class="form-control" placeholder="Enter search query" (keyup.enter)="onSearch()" />
+    </div>
+    <button class="btn btn-primary mt-2" (click)="onSearch()">Search</button>
+    <ul *ngIf="searchResults.length > 0">
+      <li *ngFor="let result of searchResults">{{ result }}</li>
+    </ul>
+  </div>
+</div>

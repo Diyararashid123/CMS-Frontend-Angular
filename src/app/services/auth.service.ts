@@ -20,12 +20,9 @@ export class AuthService {
     return this.http.post<any>(`${this.baseUrl}create-project`,projectObj,{withCredentials:true})
   }
   getResults(query: string) {
-    const url = `${this.baseUrl}users?q=${query}`;
-    console.log('Fetching URL:', url);
-    return this.http.get<any>(url);
+    return this.http.get<any>(`${this.baseUrl}users?q=${query}`,{withCredentials:true});
   }
   
-
 
   getproject() {
     return this.http.get<{projects: {ProjectName: string, ProjectDescription: string}[]}>(`${this.baseUrl}projects`, {withCredentials: true});

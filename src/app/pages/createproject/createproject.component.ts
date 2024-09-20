@@ -5,11 +5,11 @@ import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: "app-signup",
+  selector: "app-createproject",
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule,FormsModule],
-  templateUrl: "./create-projet.component.html",
-  styleUrls: ["./create-projet.component.scss"],
+  templateUrl: "./createproject.component.html",
+  styleUrls: ["./createproject.component.scss"],
 })
 export class CreateProjectComponent implements OnInit {
   projectForm!: FormGroup;
