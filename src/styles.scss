@@ -8,14 +8,6 @@
 body {
   height: 100vh;
   margin: 0;
-  background: linear-gradient(
-      to bottom right,
-      black,
-      rgb(112, 6, 145) 50%,
-      #08060e
-    ),
-    linear-gradient(to top right, #60229e 50%, #9587bf),
-    linear-gradient(to top left, #8f37e705 50%, #8585cf);
 
   background-blend-mode: multiply;
   color: var(--text);

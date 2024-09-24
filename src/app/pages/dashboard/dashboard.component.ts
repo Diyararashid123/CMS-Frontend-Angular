@@ -11,7 +11,7 @@ import { Router } from "@angular/router";
 })
 export class DashboardComponent implements OnInit {
   username: string = ''; 
-
+  urlroute:string = '';
   constructor(private auth: AuthService, private router: Router) {}
 
   ngOnInit(): void {
@@ -44,8 +44,8 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  goToCreateProject(){
-    this.router.navigate(['createproject']);
+  goToCreateProject(urlroute:string){
+    this.router.navigate([urlroute]);
   }
 
 

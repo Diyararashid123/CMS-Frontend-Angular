@@ -9,8 +9,12 @@ export class AuthService {
 
   private baseUrl: string = "https://cms-backend-spring-bush-4043.fly.dev/"
   constructor(private http:HttpClient) { }
+  
+ 
 
-
+  getprojects(pagesObj:any) {
+    return this.http.get<any>(`${this.baseUrl}projects?pages=true&project=${pagesObj}`, {withCredentials: true});
+  }
 
   validatesession(){
     return this.http.get<any>(`${this.baseUrl}validate-session`,{withCredentials:true})
@@ -23,6 +27,22 @@ export class AuthService {
     return this.http.get<any>(`${this.baseUrl}users?q=${query}`,{withCredentials:true});
   }
   
+  savemarkdown(markdownObj:any){
+    return this.http.put<any>(`${this.baseUrl}update-page`,markdownObj,{withCredentials:true})
+  }
+
+  getPagemarkdown(pagemarkdownObj: any) {
+    const { project, page } = pagemarkdownObj;
+    console.log("GET Request URL:", `${this.baseUrl}page?page=${page}&project=${project}`); // Debug API URL
+    return this.http.get<any>(
+      `${this.baseUrl}page?page=${page}&project=${project}`,
+      { withCredentials: true }
+    );
+  }
+  
+  createpage(pageObj:any){
+    return this.http.post<any>(`${this.baseUrl}create-page`,pageObj,{withCredentials:true})
+  }
 
   getproject() {
     return this.http.get<{projects: {ProjectName: string, ProjectDescription: string}[]}>(`${this.baseUrl}projects`, {withCredentials: true});

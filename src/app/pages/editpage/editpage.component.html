@@ -1,0 +1,85 @@
+<div class="editor-container">
+  <!-- Header with Toolbar -->
+  <div class="editor-header">
+    <div class="toolbar">
+      <button (click)="applyFormatting('undo')">
+        <i class="fas fa-undo"></i>
+      </button>
+      <button (click)="applyFormatting('redo')">
+        <i class="fas fa-redo"></i>
+      </button>
+      <button (click)="applyFormatting('header1')">
+        H1
+      </button>
+      <button (click)="applyFormatting('header2')">
+        H2
+      </button>
+      <button (click)="applyFormatting('header3')">
+        H3
+      </button>
+      <button (click)="applyFormatting('bold')">
+        <i class="fas fa-bold"></i>
+      </button>
+      <button (click)="applyFormatting('italic')">
+        <i class="fas fa-italic"></i>
+      </button>
+      <button (click)="applyFormatting('underline')">
+        <i class="fas fa-underline"></i>
+      </button>
+      <button (click)="applyFormatting('strikethrough')">
+        <i class="fas fa-strikethrough"></i>
+      </button>
+      <button (click)="applyFormatting('bulletList')">
+        <i class="fas fa-list-ul"></i>
+      </button>
+      <button (click)="applyFormatting('numberedList')">
+        <i class="fas fa-list-ol"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="editor-body-container">
+    <!-- Left side Markdown editor -->
+    <div class="editor-body">
+      <form [formGroup]="markdownForm">
+        <textarea
+          #markdownTextArea
+          formControlName="content"
+          class="form-control markdown-editor"
+          placeholder="Enter some Markdown..."
+        ></textarea>
+      </form>
+    </div>
+
+    <!-- Right side CSS editor -->
+    <div class="css-editor">
+      <h3>Custom CSS</h3>
+      <form [formGroup]="cssForm">
+        <textarea
+          formControlName="cssContent"
+          class="form-control css-editor-textarea"
+          placeholder="Enter CSS for the Markdown..."
+        ></textarea>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer with Buttons (unchanged) -->
+  <div class="editor-footer">
+    <button *ngIf="isUpdateMode" (click)="onUpdate()" type="button" class="btn btn-primary">
+      Save Changes
+    </button>
+    <button *ngIf="!isUpdateMode" (click)="enableUpdateMode()" type="button" class="btn btn-success">
+      Edit Content
+    </button>
+    <button (click)="convertMarkdown()" type="button" class="btn btn-info">
+      Preview Demo
+    </button>
+
+  </div>
+
+  <!-- Preview Area: Render Markdown as HTML with applied CSS here -->
+<div class="preview-area" [innerHTML]="htmlContent" [ngStyle]="dynamicStyles"></div>
+
+  
+</div>
