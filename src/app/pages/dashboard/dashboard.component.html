@@ -14,7 +14,7 @@
             <a class="nav-link" href="#"><i class="fas fa-box"></i> Product</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"><i class="fas fa-box"></i> projects</a>
+            <a class="nav-link" href="#"><i class="fas fa-box"></i> Projects</a>
           </li>
         </ul>
 
@@ -26,7 +26,10 @@
 
         <!-- Dark Mode Toggle -->
         <div class="toggle-switch">
-          <i class="fas fa-sun"></i> <i class="fas fa-moon"></i>
+          <input type="checkbox" id="darkModeSwitch" [(ngModel)]="isDarkMode" (change)="toggleDarkMode()">
+          <label for="darkModeSwitch">
+            <i class="fas fa-moon"></i> Dark Mode
+          </label>
         </div>
       </div>
     </nav>
@@ -56,6 +59,16 @@
         <div class="col-md-4">
           <div class="card">
             <div class="card-body">
+              <h5 class="card-title">Getting Started</h5>
+              <p class="card-text">Learn how to create and publish your first markdown website!</p>
+              <a (click)="startTutorial()" class="btn card-btn">Start Tutorial</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
               <h5 class="card-title">Markdown</h5>
               <p class="card-text">Build your website with Markdown and start creating your pages</p>
               <a (click)="goToCreateProject('markdown')" class="btn card-btn">Go to Markdown</a>
@@ -63,6 +76,75 @@
           </div>
         </div>
       </div>
+
+      <!-- Additional Content Section -->
+      <div class="row mt-4">
+        <!-- Recent Projects and Statistics Overview -->
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Recent Projects</h5>
+              <ul>
+                <li>Project 1 - Last modified: 1 day ago</li>
+                <li>Project 2 - Last modified: 3 days ago</li>
+                <li>Project 3 - Last modified: 1 week ago</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">Your Statistics</h5>
+              <p>Projects Published: 10</p>
+              <p>Markdown Pages Created: 50</p>
+              <p>Total Visitors: 1000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Large Section at Bottom -->
+      <div class="row mt-5">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h3 class="card-title">Featured Content</h3>
+              <p class="card-text">
+                This section can be used to highlight any important information, news, or updates for users to know about. 
+                
+              </p>
+              <a href="#" class="btn btn-primary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
+
+     <!-- Black Footer Section -->
+     <footer class="footer mt-5">
+      <div class="container-fluid p-4 text-white">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>Contact Us</h5>
+            <p>Phone: (123) 456-7890</p>
+            <p>Email: cocom</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Support</h5>
+            <p><a href="#">Help Center</a></p>
+            <p><a href="#">FAQs</a></p>
+          </div>
+          <div class="col-md-4">
+            <h5>Follow Us</h5>
+            <p><a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a></p>
+          </div>
+        </div>
+      </div>
+      </footer>
+     
   </div>
+  
 </div>

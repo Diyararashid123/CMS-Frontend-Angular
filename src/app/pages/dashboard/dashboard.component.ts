@@ -1,10 +1,12 @@
-import { Component, OnInit } from "@angular/core";
+import { ChangeDetectorRef, Component, OnInit, Renderer2 } from "@angular/core";
 import { AuthService } from "../../services/auth.service";
 import { Router } from "@angular/router";
+import { CommonModule } from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-dashboard',
-  
+  imports:[ReactiveFormsModule, CommonModule,FormsModule],
   standalone: true,
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
@@ -12,9 +14,19 @@ import { Router } from "@angular/router";
 export class DashboardComponent implements OnInit {
   username: string = ''; 
   urlroute:string = '';
-  constructor(private auth: AuthService, private router: Router) {}
+  isDarkMode: boolean = false;
+
+  constructor(private auth: AuthService, private router: Router,private renderer: Renderer2,private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      this.isDarkMode = true;
+      this.renderer.addClass(document.body, 'dark-mode');
+    }
+
+
     this.auth.validatesession().subscribe({
       next: (res) => {
      
@@ -31,7 +43,21 @@ export class DashboardComponent implements OnInit {
       }
     });
   }
+
+  toggleDarkMode() {
+    this.isDarkMode = !this.isDarkMode;
   
+    if (this.isDarkMode) {
+      this.renderer.addClass(document.body, 'dark-mode');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      this.renderer.removeClass(document.body, 'dark-mode');
+      localStorage.setItem('theme', 'light');
+    }
+  
+    // Detect changes after toggling
+    this.cdr.detectChanges();
+  }
   onLogout() {
     this.auth.logout().subscribe({
       next: () => {
@@ -49,6 +75,9 @@ export class DashboardComponent implements OnInit {
   }
 
 
-
+  startTutorial() {
+ 
+    this.router.navigate(['/tutorial']); // Assuming you have a tutorial route
+  }
   
 }
